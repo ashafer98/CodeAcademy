@@ -34,6 +34,7 @@ header {
 
 header .logo {
     max-height: 50px; 
+    padding-left: 10px;
 }
 
 header nav {
@@ -177,4 +178,16 @@ main {
 
 .location-box p {
     margin: 0;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: seashell;
+    text-align: center;
+    border-top: 1px solid seashell;
+}
+
+footer p {
+    margin: 5px 0;
 }
