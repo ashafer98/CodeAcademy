@@ -127,3 +127,54 @@ main {
     border: 1px solid #ddd; /* Optional: Adds a border to the images */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for better visuals */
 }
+
+/* Section 3 */
+
+#section3 {
+    padding: 20px;
+    margin: 20px;
+    background-color: black;
+}
+
+.location-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.location-img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.location-boxes {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.location-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #ddd; /* Optional: Adds a border to the boxes */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Optional: Adds a slight shadow for better visuals */
+}
+
+.location-box h3 {
+    margin: 0 0 10px;
+}
+
+.location-box p {
+    margin: 0;
+}
