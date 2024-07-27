@@ -25,29 +25,75 @@ const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, inval
 
 // Add your functions below:
 
-
+// const valid1 = [4, 5, 3, 9, 6, 7, 7, 9, 0, 8, 0, 1, 6, 8, 0, |8=check digit not doubled];
 
 function validateCred(arr) {
+    let skip = true
+    let sum = arr[arr.length - 1]
+
     // console.log(valid1)
     // console.log(arr.length)
     // console.log(arr[arr.length-1])
-for(i=arr.length-1; i>=0; i--){
-console.log(arr[i])
+    for (i = arr.length - 2; i >= 0; i--) {
+        // console.log(arr[i])
+
+        let value = arr[i];
+
+        if (skip) {
+            value *= 2;
+            if (value > 9) {
+                value -= 9;
+            }
+        }
+
+        sum += value;
+        skip = !skip;
+    }
+
+    const isValid = sum % 10 === 0;
+    console.log(isValid);
+    return true;
 }
 
 
-    // if(arr == valid) {
-    //     return true
-    // }
+function findInvalidCards(arr) {
+    let invalidCards = [];
 
-    // if(arr == invalid) {
-    //     return false
-    // }
+    for (let card of arr) {
+        if (!validateCred(card)) {
+            invalidCards.push(card);
+        }
+    }
+    return invalidCards;
 }
 
-validateCred(valid1)
 
 
+
+
+
+function idInvalidCardCompanies(arr) {
+    const companies = [];
+    const companyMap = {
+        3: 'Amex (American Express)',
+        4: 'Visa',
+        5: 'Mastercard',
+        6: 'Discover'
+    };
+
+    for (let card of arr) {
+        let firstDigit = card[0];
+        if (companyMap[firstDigit]) {
+            if (!companies.includes(companyMap[firstDigit])) {
+                companies.push(companyMap[firstDigit]);
+            }
+        } else {
+            console.log(`Company not found for card starting with ${firstDigit}`);
+        }
+    }
+
+    return companies;
+}
 
 
 
