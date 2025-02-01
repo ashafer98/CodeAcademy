@@ -21,21 +21,26 @@
   margin-bottom: 20px;
 }
 
-.track-list {
+.results-list {
   display: flex;
   flex-direction: column;
   gap: 20px; /* Adds space between each track item */
+  width: 100%;
 }
 
-.track-item {
+.results-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   padding: 15px;
   border-radius: 8px;
-  width: 100%;
+  /* width: 90%; */
   transition: background-color 0.3s ease;
+}
+
+.results-item:hover {
+  background-color: rgba(20, 20, 85, 0.479);
 }
 
 .track-item:hover {
