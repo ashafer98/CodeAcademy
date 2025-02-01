@@ -6,6 +6,7 @@ function TrackList({ tracks }) {
     <div className="tracklist">
       {tracks.map((track, index) => (
         <Track key={index} trackName={track.name} artistName={track.artist} />
+      
       ))}
     </div>
   );

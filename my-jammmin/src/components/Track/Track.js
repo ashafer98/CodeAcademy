@@ -5,6 +5,7 @@ function Track({ trackName, artistName }) {
     <div className="track">
       <h3>{trackName}</h3>
       <p>{artistName}</p>
+      
     </div>
   );
 }

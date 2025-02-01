@@ -7,6 +7,7 @@ function Playlist() {
       <h2>Playlist</h2>
       {/* <TrackList tracks={playlist} /> */}
       <button>Add To Spotify</button>
+      
     </div>
   );
 }
