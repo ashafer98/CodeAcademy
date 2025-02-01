@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import './App.css';
+import SearchBar from '../SearchBar/SearchBar';
+import SearchResults from '../SearchResults/SearchResults'
+import Playlist from '../Playlist/Playlist';
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
+  const [playlist, setPlaylist] = useState([
+    { name: 'Track 1', artist: 'Artist 1' },
+    { name: 'Track 2', artist: 'Artist 2' },
+    { name: 'Track 3', artist: 'Artist 3' },
+  ]);
 
   const handleSearch = () => {
     console.log('Searching for:', searchTerm);
@@ -13,27 +21,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Search Application</h1>
-        <div className="search-container">
-          <input
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search..."
-            className="search-input"
-          />
-          <button onClick={handleSearch} className="search-button">
-            Search
-          </button>
-        </div>
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} handleSearch={handleSearch} />
         <div className="containers">
-          <div className="results-container">
-            <h2>Results</h2>
-            <p>Display search results here</p>
-          </div>
-          <div className="playlist-container">
-            <h2>Playlist</h2>
-            <p>Display playlist here</p>
-          </div>
+          <SearchResults searchTerm={searchTerm} />
+          <Playlist playlist={playlist} />
         </div>
       </header>
     </div>
