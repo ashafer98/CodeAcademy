@@ -1,18 +1,24 @@
 import React from 'react';
 
 function SearchBar({ searchTerm, setSearchTerm, handleSearch }) {
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent the page from reloading
+    handleSearch(); // Trigger the search and log tracks
+  };
+
   return (
-    <div className="search-container">
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder="Search..."
-        className="search-input"
+    <div className="search-bar">
+      <input 
+        type="text" 
+        value={searchTerm} 
+        onChange={handleInputChange} 
+        placeholder="Search for tracks..."
       />
-      <button onClick={handleSearch} className="search-button">
-        Search
-      </button>
+      <button onClick={handleSubmit}>Search</button>
     </div>
   );
 }

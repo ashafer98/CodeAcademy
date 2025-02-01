@@ -1,11 +1,12 @@
 import React from 'react';
 import TrackList from '../TrackList/TrackList';
 
-function Playlist({ playlist }) {
+function Playlist() {
   return (
     <div className="playlist-container">
       <h2>Playlist</h2>
-      <TrackList tracks={playlist} />
+      {/* <TrackList tracks={playlist} /> */}
+      <button>Add To Spotify</button>
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.track {
+    padding: 10px;
+    background-color: #333;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .track h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .track p {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
